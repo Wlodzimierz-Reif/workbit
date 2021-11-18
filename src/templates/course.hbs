@@ -3,7 +3,7 @@
   <ul class='pages-list'>
     {{#each pages}}
       <li>{{title}}</li>
-      <button class='del-btn'>Delete page</button>
+      <button class='del-btn' key={{../_id}}>Delete page</button>
     {{/each}}
   </ul>
   <button class='add-btn'>Add page</button>

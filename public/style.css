@@ -48,6 +48,7 @@ html {
 
 .course .course-title {
   margin-bottom: 0;
+  display: none;
 }
 
 .course .pages-list {

@@ -6,6 +6,7 @@ app.use('/', express.static(path.join(__dirname, 'public')));
 
 app.get('/courses', (req, res) => {
   var courses = readCourses();
+  console.log(courses);
   return res.end(courses);
 });
 
@@ -14,7 +15,38 @@ app.post('/courses', (req, res) => {
   createCourse(req.query.title);
 });
 
+app.put('/courses/:id', function (req, res) {
+  var course = getCourseById(req.body.todo.id); //using helper function to get the course
+  if (course) {
+    editcourse(req.body.course.id, req.body.course);
+    res.send('ok');
+  } else {
+    res.status(400).send('course not found');
+  }
+});
+
 // update function
+// I have no experience in NODE whatsoever so after long search and trials and errors with copy and paste I decided to write it the way I can to show you the logic I'd use if I knew the syntax. I not I should use .put but I failed in all attempts, so:
+
+// const addCoursePage = (courseId, pageTitle) => {
+//   const coursesArray = readCourses();
+//   const requiredCourse = coursesArray.filter(
+//     (course) => course._id === courseId
+//   );
+//   const newCourse = {
+//     ...requiredCourse,
+//     pages: { ...requiredCourse.pages,
+//      },
+//   };
+// };
+
+// const fs = require('fs')
+// fs.writeFile('/path/to/file', '', function(){console.log('done')})
+
+// app.put('/courses', (req, res) => {
+//   const courses = readCourses();
+//     const requestedCourse = courses.filter(course => course)
+// });
 
 app.listen(3000);
 
