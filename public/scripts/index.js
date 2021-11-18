@@ -1,6 +1,6 @@
-$(() => {
-  console.log('loaded');
-});
+// $(() => {
+//   console.log('loaded');
+// });
 
 function getCourses() {
   fetch(window.origin + '/courses')

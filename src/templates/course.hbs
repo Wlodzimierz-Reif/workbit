@@ -1,9 +1,10 @@
-<div>
-  <h3>{{title}}</h3>
-  <p>{{_id}}</p>
-  <ul class='people_list'>
+<div class='course'>
+  <h3 class='course-title'>{{title}}</h3>
+  <ul class='pages-list'>
     {{#each pages}}
       <li>{{title}}</li>
+      <button class='del-btn'>Delete page</button>
     {{/each}}
   </ul>
+  <button class='add-btn'>Add page</button>
 </div>
